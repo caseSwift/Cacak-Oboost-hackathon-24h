@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--IOS compatibility-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Website title">
+    <link rel="apple-touch-icon" href="apple-icon-144x144.png">
+
+
+    <!--Android compatibility-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WebSite title">
+    <link rel="icon" type="image/png" href="android-icon-192x192.png">
+
+
+    <!-- CSS files and links -->
+
+    <!-- bootstrap link css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- custom css  -->
+    <link rel="stylesheet" type="text/css" href="static/shop/animation.css" th:href="@{shop/animation.css}">
+    <link rel="stylesheet" type="text/css" href="static/shop/fonts.css" th:href="@{shop/fonts.css}">
+    <link rel="stylesheet" type="text/css" href="static/shop/style.css" th:href="@{shop/style.css}">
+
+
+    <title>Ovačar Banja</title>
+</head>
+
+<body class="background-light-blue-color">
+
+    <!-- Header START -->
+    <header class="py-2">
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand text-decoration-none" href="#home">
+                        <h1 class="logo text-uppercase ">
+                            OBook
+                            <!-- here can put image instead of text-->
+                            <!-- <img class="w-100" src="" alt="logo"> -->
+
+                            <!-- <i class="fas fa-spa"></i> -->
+                        </h1>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pt-4 pt-lg-0">
+                            <li class="nav-item mx-4">
+                                <a class="nav-link text-uppercase d-inline-block px-0 pb-1" th:href="@{/search}">Search</a>
+                            </li> <!-- .nav-item END -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link text-uppercase d-inline-block px-0 pb-1" th:href="@{/profile}">Profile
+                                    </a>
+                            </li> <!-- .nav-item END -->
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div> <!-- .container END -->
+
+    </header> <!-- Header END -->
+
+    <!-- Main START -->
+    <main>
+
+        <!-- shop list section START -->
+        <section id="shop-list-section" class="shop-list-section my-5">
+            <div class="container">
+
+
+                <div class="shop-title text-center pt-5 pb-4 animation" data-animation="slideDown">
+                    <h2 class="pb-3">
+                        Gift Shop
+                    </h2>
+                    <!-- here paragraph, if you need him, if not just comment it -->
+                    <p class="d-block mx-auto">
+
+                    </p>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="shop-item col-12 col-md-6 col-lg-4 col-xl-3 my-4 animation" data-animation="slideUp" data-delay="0s">
+                        <article class="shop-item-content bg-white py-3">
+                            <div class="shop-item-img position-relative">
+                                <img class="w-100" th:src="@{/shop/majica.png}" alt="shop item">
+                                <p class="shop-item-description d-block position-absolute text-white m-0 px-2 py-3">
+                                    Majica Ovčar Banje
+                                </p>
+                            </div> <!-- .shop-item-img END -->
+
+                            <div class="shop-item-text mt-4 px-4 pb-4">
+                                <h3 class="shop-item-title"> Majica </h3>
+                                <a href="#"
+                                   class="shop-item-link text-decoration-none text-capitalize d-inline-block primary-button text-white mt-3">
+                                    Preuzmi
+                                </a>
+                            </div> <!-- .shop-item-text END -->
+                        </article> <!-- .shop-item-content END -->
+                    </div> <!-- .shop-item END -->
+
+                    <div class="shop-item col-12 col-md-6 col-lg-4 col-xl-3 my-4 animation" data-animation="slideUp" data-delay="0.15s">
+                        <article class="shop-item-content bg-white py-3">
+                            <div class="shop-item-img position-relative">
+                                <img class="w-100" th:src="@{shop/medved.png}" alt="shop item">
+                                <p class="shop-item-description d-block position-absolute text-white m-0 px-2 py-3">
+                                    Plisani meda s motivima Ovcar banje
+                                </p>
+                            </div> <!-- .shop-item-img END -->
+
+                            <div class="shop-item-text mt-4 px-4 pb-4">
+                                <h3 class="shop-item-title">Plišani Meda </h3>
+                                <a href="#"
+                                   class="shop-item-link text-decoration-none text-capitalize d-inline-block primary-button text-white mt-3">
+                                    Preuzmi
+                                </a>
+                            </div> <!-- .shop-item-text END -->
+                        </article> <!-- .shop-item-content END -->
+                    </div> <!-- .shop-item END -->
+
+                    <div class="shop-item col-12 col-md-6 col-lg-4 col-xl-3 my-4 animation" data-animation="slideUp" data-delay="0.3s">
+                        <article class="shop-item-content bg-white py-3">
+                            <div class="shop-item-img position-relative">
+                                <img class="w-100" th:src="@{shop/kutija.png}" alt="shop item">
+                                <p class="shop-item-description d-block position-absolute text-white m-0 px-2 py-3">
+                                    Kutija za nakit
+                                </p>
+                            </div> <!-- .shop-item-img END -->
+
+                            <div class="shop-item-text mt-4 px-4 pb-4">
+                                <h3 class="shop-item-title">Kutija za nakit </h3>
+                                <a href="#"
+                                   class="shop-item-link text-decoration-none text-capitalize d-inline-block primary-button text-white mt-3">
+                                    Preuzmi
+                                </a>
+                            </div> <!-- .shop-item-text END -->
+                        </article> <!-- .shop-item-content END -->
+                    </div> <!-- .shop-item END -->
+
+                    <div class="shop-item col-12 col-md-6 col-lg-4 col-xl-3 my-4 animation" data-animation="slideUp" data-delay="0.45s">
+                        <article class="shop-item-content bg-white py-3">
+                            <div class="shop-item-img position-relative">
+                                <img class="w-100" th:src="@{shop/solja.png}" alt="shop item">
+                                <p class="shop-item-description d-block position-absolute text-white m-0 px-2 py-3">
+                                   Kuhinjska šolja sa motivima Ovčar banje.
+                                </p>
+                            </div> <!-- .shop-item-img END -->
+
+                            <div class="shop-item-text mt-4 px-4 pb-4">
+                                <h3 class="shop-item-title">Kuhinjska šolja </h3>
+                                <a href="#"
+                                   class="shop-item-link text-decoration-none text-capitalize d-inline-block primary-button text-white mt-3">
+                                    Preuzmi
+                                </a>
+                            </div> <!-- .shop-item-text END -->
+                        </article> <!-- .shop-item-content END -->
+                    </div> <!-- .shop-item END -->
+
+
+
+                </div> <!-- .row END -->
+            </div>
+        </section> <!-- shop list section END -->
+
+    </main> <!-- Main END -->
+
+
+    <!-- javascript files and links -->
+
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome icons-->
+    <script src="https://kit.fontawesome.com/63a3a6b1d0.js" crossorigin="anonymous"></script>
+
+    <!-- main.js -->
+    <script src="static/shop/main.js" th:src="@{shop/main.js}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--IOS compatibility-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Website title">
+    <link rel="apple-touch-icon" href="apple-icon-144x144.png">
+
+
+    <!--Android compatibility-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WebSite title">
+    <link rel="icon" type="image/png" href="android-icon-192x192.png">
+
+
+    <!-- CSS files and links -->
+
+    <!-- bootstrap link css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- custom css  -->
+    <link rel="stylesheet" type="text/css" href="static/shop/animation.css" th:href="@{shop/animation.css}">
+    <link rel="stylesheet" type="text/css" href="static/shop/fonts.css" th:href="@{shop/fonts.css}">
+    <link rel="stylesheet" type="text/css" href="static/shop/style.css" th:href="@{shop/style.css}">
+
+    <title>Ovačar Banja</title>
+</head>
+
+<body class="background-light-blue-color">
+
+    <!-- Header START -->
+    <header class="py-2">
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand text-decoration-none" th:href="@{/home}">
+                        <h1 class="logo text-uppercase ">
+                            OBook
+                            <!-- here can put image instead of text-->
+                            <!-- <img class="w-100" src="" alt="logo"> -->
+
+                            <!-- <i class="fas fa-spa"></i> -->
+                        </h1>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pt-4 pt-lg-0">
+                            <!-- .nav-item END -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link text-uppercase d-inline-block px-0 pb-1" th:href="@{/search}">Search
+                                    </a>
+                            </li> <!-- .nav-item END -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link text-uppercase d-inline-block px-0 pb-1" th:href="@{/auth}">Login
+                                    </a>
+                            </li> <!-- .nav-item END -->
+                            <li class="nav-item mx-4">
+                                <a class="nav-link text-uppercase d-inline-block px-0 pb-1" th:href="@{/shop}">Shop
+                                    </a>
+                            </li> <!-- .nav-item END -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div> <!-- .container END -->
+
+    </header> <!-- Header END -->
+
+    <!-- Main START -->
+    <main>
+        <!-- profile section START -->
+        <section class="profile-section py-5">
+            <div class="container">
+
+                <!-- this intro part can be just commented, if you don't need it -->
+                <!-- intro-text -->
+
+
+                <div class="row mt-4">
+                    <div class="col-12 col-lg-6 text-center mb-5">
+
+                        <article class="profile-card d-inline-block p-4 bg-white ">
+
+                            <div class="profile-card-image">
+                                <img class="rounded-circle d-block mx-auto" th:src="@{/profile/profile.png}"
+                                    alt="profile photo">
+                            </div> <!-- .profile-card-image END -->
+
+                            <div class="profile-card-info text-start pt-4 ">
+                                <h3 th:text="${user.firstName} + '&nbsp;' + ${user.lastName}" class="pb-3">Lorem Ipsum</h3>
+
+                                <div class="info-item">
+                                    <p class="d-inline-block fw-bold"> <i class="fas fa-birthday-cake pe-1"></i> Birth
+                                        date:
+                                    </p>
+                                    <p th:text="${#dates.format(user.birthdate, 'yyyy-MM-dd')}" class="d-inline-block"> 11.07.1987. </p>
+                                </div> <!-- .info-item END -->
+
+                                <div class="info-item">
+                                    <p class="d-inline-block fw-bold"> <i class="fas fa-envelope pe-1"></i> mail: </p>
+                                    <a class="d-inline-block text-decoration-none text-primary"
+                                        th:text="${user.email}">
+                                        loremipsum@mail.com
+                                    </a>
+                                </div> <!-- .info-item END -->
+
+                              <!-- .info-item END -->
+
+                            </div> <!-- .profile-card-info END -->
+
+                        </article> <!-- .profile-card END -->
+
+                    </div> <!-- .col END -->
+
+
+                    <div class="col-12 col-lg-6 mb-5 text-center text-lg-start">
+
+
+
+                        <div th:each="activity: ${activities}" class="activity-part d-inline-block my-3 card-shadow-hover">
+
+
+
+                            <article class="d-inline-block p-4 bg-white rounded-3 bg-light-yellow">
+
+                                <h4 th:text="${activity.name}">Lorem ipsum</h4>
+
+                                <div>
+                                    <div class="activity-item py-2 d-inline-block px-3">
+                                        <i class="fas fa-clock pe-2"></i>
+                                        <span th:text="${activity.startAt}">20.15 - 21:30</span>
+                                    </div>
+
+                                    <div class="activity-item py-2 d-inline-block px-3">
+                                        <i class="fas fa-calendar-alt pe-2"></i>
+                                        <span th:text="${activity.endsAt}">11.7.2021.</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="activity-item py-2 d-inline-block px-3">
+                                        <i class="fas fa-chart-line pe-2"></i>
+                                        <span>Dostupno</span>
+                                    </div>
+
+                                    <div class="activity-item py-2 d-inline-block px-3">
+                                        <i class="fas fa-map-marker-alt pe-2"></i>
+                                        <span th:text="${activity.locationName}">Belgrade</span>
+                                    </div>
+                                </div>
+
+                            </article>
+
+                        </div> <!-- .activity-part END -->
+
+
+
+
+                    </div> <!-- .col END -->
+
+                </div> <!-- .row END -->
+            </div> <!-- .container END -->
+        </section> <!-- profile section END -->
+    </main> <!-- Main END -->
+
+    <!-- javascript files and links -->
+
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome icons-->
+    <script src="https://kit.fontawesome.com/63a3a6b1d0.js" crossorigin="anonymous"></script>
+
+    <!-- main.js -->
+    <script src="static/shop/main.js" th:src="@{shop/main.js}"></script>
+</body>
+
+</html>
